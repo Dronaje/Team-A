@@ -1,25 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import { Switch, Route, BrowserRouter } from "react-router-dom";
+import Auth from '../src/pages/Auth';
+import HomePage from '../src/pages/HomePage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello Dronaje App! Is this building and deploying?
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="AppContainer">
+      {/* <header className="App-header"> */}
+        <BrowserRouter >
+          <Switch>
+            <Route path="/" exact>
+              <Auth />
+            </Route>
+            <Route path="homepage" exact>
+              <HomePage />
+            </Route>
+          </Switch>
+        </BrowserRouter>
+      {/* </header> */}
     </div>
   );
 }
 
 export default App;
+

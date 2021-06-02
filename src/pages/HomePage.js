@@ -3,7 +3,10 @@ import Menu from '../components/BurgerMenu';
 
 const HomePage = () =>{
     return(
-        <Menu />
+        <div>
+            <Menu />
+            
+        </div>
     )
 }
 

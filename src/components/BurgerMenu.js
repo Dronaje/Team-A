@@ -15,14 +15,16 @@ function BurgerMenu() {
   useOnClickOutside(node, () => setOpen(false));
 
   return (
+    <ThemeProvider theme={theme}>
       <>
         <div ref={node}>
           <FocusLock disabled={!open}>
             <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
             <Menu open={open} setOpen={setOpen} id={menuId} />
           </FocusLock>
-        </div>
+        </div>        
       </>
+    </ThemeProvider>
   );
 }
 

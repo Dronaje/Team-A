@@ -4,6 +4,8 @@ import { StyledMenu } from './Menu.styled';
 import AllPhotos from '../../static/AllPhotos.png';
 import Share from '../../static/share.png';
 import Categories from '../../static/categories.png';
+import LogOut from '../../static/log-out.jpg';
+
 
 const Menu = ({ open, ...props }) => {
   
@@ -23,6 +25,10 @@ const Menu = ({ open, ...props }) => {
       <a href="/" tabIndex={tabIndex}>
         <span aria-hidden="true"><img src={Share} /></span>
         Send to a friend
+        </a>
+      <a href="/" tabIndex={tabIndex}>
+        <span aria-hidden="true"><img src={LogOut} /></span>
+        Log Out
         </a>
     </StyledMenu>
   )

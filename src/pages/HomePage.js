@@ -1,12 +1,20 @@
 import React from 'react';
-import Menu from '../components/BurgerMenu';
+import Header from "../components/header";
+import dronaje from '../static/dronaje.png';
+
 
 const HomePage = () =>{
     return(
-        <div>
-            <Menu />
-            
-        </div>
+        <body>
+            <Header />      
+            <div className="photos">
+
+            </div>
+            <button className="new-button" onClick="">
+                New
+                <img src={dronaje} className="small-logo" />
+            </button>
+        </body>
     )
 }
 

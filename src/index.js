@@ -14,8 +14,8 @@ ReactDOM.render(
     {/* <App /> */}
     {/* <HomePage /> */}
     {/* <ImgDes /> */}
-    {/* <Categors /> */}
-    <Sharing />
+    <Categors />
+    {/* <Sharing /> */}
 
   </BrowserRouter>,
   document.getElementById("root")

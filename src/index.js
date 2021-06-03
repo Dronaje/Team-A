@@ -7,14 +7,16 @@ import { BrowserRouter } from "react-router-dom";
 import HomePage from '../src/pages/HomePage';
 import ImgDes from './pages/ImageDescription';
 import Categors from './pages/CategoriesOptions';
-
+import Sharing from './pages/SharingConfirm';
 
 ReactDOM.render(
   <BrowserRouter>
     {/* <App /> */}
     {/* <HomePage /> */}
     {/* <ImgDes /> */}
-    <Categors />
+    {/* <Categors /> */}
+    <Sharing />
+
   </BrowserRouter>,
   document.getElementById("root")
 );

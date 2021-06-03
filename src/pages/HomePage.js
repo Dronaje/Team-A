@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from "../components/header";
 import dronaje from '../static/dronaje.png';
+import temp from '../static/temp.png';
 
 
 const HomePage = () =>{
@@ -8,7 +9,13 @@ const HomePage = () =>{
         <body>
             <Header />      
             <div className="photos">
-
+                <img src={temp} className="temp" />
+                <img src={temp} className="temp" />
+                <img src={temp} className="temp" />
+                <img src={temp} className="temp" />
+                <img src={temp} className="temp" />
+                <img src={temp} className="temp" />
+                <img src={temp} className="temp" />
             </div>
             <button className="new-button" onClick="">
                 New

@@ -102,9 +102,44 @@ body {
   margin: auto;
 }
 
+.buy-button {
+  background-color: transparent;
+  width: 84px;
+  height: 78px;
+  border-radius: 60px;
+  border: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: auto;
+}
+
 .photos{
   height: 450px;
   width: 90%;
   margin: 10px auto;
   border: ridge;
+  overflow: overlay;
+  text-align: -webkit-center;
+
+}
+
+.buy {
+  height: 81px;
+}
+
+.temp {
+  margin: 12px;
+}
+
+.temp1 {
+  height: 235px;
+  margin-top: 10px;
+}
+
+.description {
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  color: black;
 }

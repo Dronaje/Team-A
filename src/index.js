@@ -5,11 +5,14 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import HomePage from '../src/pages/HomePage';
+import ImgDes from './pages/ImageDescription';
+
 
 ReactDOM.render(
   <BrowserRouter>
     {/* <App /> */}
-    <HomePage />
+    {/* <HomePage /> */}
+    <ImgDes />
   </BrowserRouter>,
   document.getElementById("root")
 );

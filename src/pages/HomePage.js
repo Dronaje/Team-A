@@ -3,7 +3,6 @@ import Header from "../components/header";
 import dronaje from '../static/dronaje.png';
 import temp from '../static/temp.png';
 
-
 const HomePage = () =>{
     return(
         <body>

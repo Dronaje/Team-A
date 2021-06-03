@@ -2,7 +2,7 @@ import React from 'react';
 import Header from "../components/header";
 import dronaje from '../static/dronaje.png';
 
-const HomePage = () =>{
+const SharingConfirm = () =>{
     return(
         <body>
             <Header />      
@@ -15,4 +15,4 @@ const HomePage = () =>{
     )
 }
 
-export default HomePage;
+export default SharingConfirm;

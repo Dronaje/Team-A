@@ -3,7 +3,7 @@ import Header from "../components/header";
 import buy from '../static/buy.png';
 import temp from '../static/temp.png';
 
-const HomePage = () =>{
+const ImageDescription = () =>{
     return(
         <body>
             <Header />      
@@ -18,4 +18,4 @@ const HomePage = () =>{
     )
 }
 
-export default HomePage;
+export default ImageDescription;

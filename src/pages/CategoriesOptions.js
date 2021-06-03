@@ -3,7 +3,7 @@ import Header from "../components/header";
 import dronaje from '../static/dronaje.png';
 import temp from '../static/temp.png';
 
-const HomePage = () =>{
+const CategoriesOptions = () =>{
     return(
         <body>
             <Header />      
@@ -25,4 +25,4 @@ const HomePage = () =>{
     )
 }
 
-export default HomePage;
+export default CategoriesOptions;

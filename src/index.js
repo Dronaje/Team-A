@@ -6,13 +6,15 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import HomePage from '../src/pages/HomePage';
 import ImgDes from './pages/ImageDescription';
+import Categors from './pages/CategoriesOptions';
 
 
 ReactDOM.render(
   <BrowserRouter>
     {/* <App /> */}
     {/* <HomePage /> */}
-    <ImgDes />
+    {/* <ImgDes /> */}
+    <Categors />
   </BrowserRouter>,
   document.getElementById("root")
 );

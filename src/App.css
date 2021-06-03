@@ -143,3 +143,23 @@ body {
   font-style: normal;
   color: black;
 }
+
+h1 {
+  font-family: 'Reem Kufi', sans-serif;
+}
+
+.Categor-button {
+  width: 280px;
+  height: 53px;
+  border-radius: 17px;
+  background: rgba(255, 249, 249, 0.79);
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  border: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: auto;
+  margin-top: 23px;
+}

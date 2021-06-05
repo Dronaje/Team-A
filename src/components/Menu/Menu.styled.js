@@ -14,12 +14,12 @@ export const StyledMenu = styled.nav`
 
   @media (max-width: ${({ theme }) => theme.mobile}) {
       width: 85%;
+      height: 93%;
     }
 
   a {
     font-size: 2rem;
     font-family: Reem Kufi;
-    // padding: 2rem 0;
     font-weight: bold;
     letter-spacing: 0.2rem;
     color: ${({ theme }) => theme.primaryDark};
@@ -27,10 +27,21 @@ export const StyledMenu = styled.nav`
 
     @media (max-width: ${({ theme }) => theme.mobile}) {
       font-size: 20px;
+      align-items: center;
+      display: inline-flex;
     }
 
     &:hover {
       color: ${({ theme }) => theme.primaryHover};
     }
+
+    :nth-child(4) {
+      position: absolute;
+      bottom: 15px;
+    }
+  }
+
+  span {
+    width: 90px;
   }
 `;

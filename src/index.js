@@ -16,13 +16,13 @@ import SignIn from './pages/SignIn';
 
 ReactDOM.render(
   <BrowserRouter>
-    <App />
+    {/* <App /> */}
     {/* <SignIn /> */}
     {/* <Login /> */}
     {/* <HomePage /> */}
     {/* <ImgDes /> */}
     {/* <MyCategors /> */}
-    {/* <Categors /> */}
+    <Categors />
     {/* <Sharing /> */}
     {/* <SharingC /> */}
     {/* <NweCategor /> */}

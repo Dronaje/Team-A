@@ -24,6 +24,7 @@ export const StyledMenu = styled.nav`
     letter-spacing: 0.2rem;
     color: ${({ theme }) => theme.primaryDark};
     text-decoration: none;
+    margin: 0px 16px;
 
     @media (max-width: ${({ theme }) => theme.mobile}) {
       font-size: 20px;
@@ -36,12 +37,15 @@ export const StyledMenu = styled.nav`
     }
 
     :nth-child(4) {
-      position: absolute;
-      bottom: 15px;
+      flex: auto;
+      align-items: flex-end;
     }
   }
 
   span {
-    width: 90px;
+    margin-left: auto;
+    width: 70px;
+    text-align: center;
+    font-family: system-ui;
   }
 `;

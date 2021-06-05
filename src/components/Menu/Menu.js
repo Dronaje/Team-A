@@ -15,20 +15,20 @@ const Menu = ({ open, ...props }) => {
   return (
     <StyledMenu open={open} aria-hidden={!isHidden} {...props}>
       <a href="/" tabIndex={tabIndex}>
-        <span aria-hidden="true"><img src={AllPhotos} /></span>
         All photos
+        <span aria-hidden="true"><img src={AllPhotos} /></span>
       </a>
       <a href="/" tabIndex={tabIndex}>
-        <span aria-hidden="true"><img src={Categories} /></span>
         Categories
+        <span aria-hidden="true"><img src={Categories} /></span>
         </a>
       <a href="/" tabIndex={tabIndex}>
-        <span aria-hidden="true"><img src={Share} /></span>
         Send to a friend
+        <span aria-hidden="true"><img src={Share} /></span>
         </a>
       <a href="/" tabIndex={tabIndex}>
-        <span aria-hidden="true"><img src={LogOut} /></span>
         Log Out
+        <span aria-hidden="true"><img src={LogOut} /></span>
         </a>
     </StyledMenu>
   )

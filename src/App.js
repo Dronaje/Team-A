@@ -6,7 +6,6 @@ import HomePage from '../src/pages/HomePage';
 function App() {
   return (
     <div className="AppContainer">
-      {/* <header className="App-header"> */}
         <BrowserRouter >
           <Switch>
             <Route path="/" exact>
@@ -17,7 +16,6 @@ function App() {
             </Route>
           </Switch>
         </BrowserRouter>
-      {/* </header> */}
     </div>
   );
 }

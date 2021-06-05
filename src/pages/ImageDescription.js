@@ -9,7 +9,7 @@ const ImageDescription = () =>{
             <Header />      
             <div className="photos">
                 <img src={temp} className="temp1" />
-                <span className="description">cbjdvbdkvnbsdjvnc</span>
+                <span className="description">cbjdvbdkvkjhgcvbnm, jhkjghcnbsdjvnc</span>
             </div>
             <button className="buy-button" onClick="">
                 <img src={buy} className="buy" />

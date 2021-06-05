@@ -3,28 +3,27 @@
   text-align: center;
 }
 
-.App-logo {
-  position: absolute;
-  width: 330px;
-  height: 418px;
-  /* left: 42px; */
-  top: 50px;
+body {
+  background-color: #849CF2;
+  width: 100%;
 }
 
-.small-logo {
-  height: 55px;
+h1 {
+  font-family: 'Reem Kufi', sans-serif;
 }
+
+h3 {
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 23px;
+}
+
+/* -----------------------header---------------------- */
 
 .head {
   display: flex;
   flex-direction: row;
   background-color: white;
   height: 80px;
-}
-
-body {
-  background-color: #849CF2;
-  width: 100%;
 }
 
 .pages-logo {
@@ -38,12 +37,26 @@ body {
   top: 17px;
 }
 
+/* -----------------------Field of form---------------------- */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+input, select {
+  width: 95%;
+  height: 43px;
+  border-radius: 13px;
+  background: rgba(245, 239, 239, 0.63);
+  display: flex;
+  margin-top: 17px;
+  border: none;
+  text-align: center;
 }
+
+::placeholder {
+  font-size: 22px;
+  color: rgb(71, 71, 71);
+  font-family: 'Reem Kufi', sans-serif;
+}
+
+/* -----------------------Auth---------------------- */
 
 .App-header {
   background-color: white;
@@ -56,23 +69,12 @@ body {
   color: white;
 }
 
-.formBody {
-  background-color: white;
-  min-height: 100vh;
+.App-logo {
+  position: absolute;
+  width: 330px;
+  height: 418px;
+  top: 50px;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-/* @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
 
 .auth-button{
   width: 185px;
@@ -85,8 +87,64 @@ body {
   font-family: 'Reem Kufi', sans-serif;
   font-size: 25px;
   font-style: normal;
-  /* font-weight: 400; */
   letter-spacing: 0em;
+  border: none;
+}
+
+/* -----------------------SignIn & Login---------------------- */
+
+.formBody {
+  background-color: white;
+  min-height: 100vh;
+}
+
+.formsLogin {
+  height: 100vh;
+  width: 90%;
+  margin: auto;
+  margin-top: 0px;
+  overflow: overlay;
+  text-align: -webkit-center;
+}
+
+.form-logo {
+  height: 190px;
+  margin-top: 50px;
+}
+
+.inFrom {
+  background: #EDE7E7;
+}
+
+.buttonLogin {
+  width: 95%;
+  height: 43px;
+  border-radius: 13px;
+  background: rgba(45, 61, 202, 0.65);
+  margin-top: 20px;
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  border: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: auto;
+  margin-top: 17px;
+}
+
+/* -----------------------HomePage---------------------- */
+
+.photos{
+  height: 450px;
+  width: 90%;
+  margin: 10px auto;
+  overflow: overlay;
+  text-align: -webkit-center;
+}
+
+.temp {
+  margin: 12px;
 }
 
 .new-button {
@@ -105,6 +163,24 @@ body {
   margin: auto;
 }
 
+.small-logo {
+  height: 55px;
+}
+
+/* -----------------------ImageDescription---------------------- */
+
+.temp1 {
+  height: 235px;
+  margin-top: 10px;
+}
+
+.description {
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  color: black;
+}
+
 .buy-button {
   background-color: transparent;
   width: 84px;
@@ -117,12 +193,17 @@ body {
   margin: auto;
 }
 
-.buttonLogin {
-  width: 280px;
-  height: 43px;
-  border-radius: 13px;
-  background: rgba(45, 61, 202, 0.65);
-  margin-top: 20px;
+.buy {
+  height: 81px;
+}
+
+/* -----------------------UserCategories---------------------- */
+
+.Categor-button {
+  width: 95%;
+  height: 53px;
+  border-radius: 17px;
+  background: rgba(255, 249, 249, 0.79);
   font-family: 'Reem Kufi', sans-serif;
   font-size: 32px;
   font-style: normal;
@@ -131,7 +212,29 @@ body {
   justify-content: space-evenly;
   align-items: center;
   margin: auto;
-  margin-top: 17px;
+  margin-top: 23px;
+}
+
+/* -----------------------CategoriesOptions---------------------- */
+
+.frameH1 {
+  width: 95%;
+  height: 53px;
+  border-radius: 17px;
+  background: rgba(87, 106, 172, 0.28);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: auto;
+  margin-top: 23px;
+}
+
+/* -----------------------Sharing---------------------- */
+
+.sharingTitel {
+  color: #16265E;
+  font-weight: inherit;
+  font-size: 40px;
 }
 
 .form-button {
@@ -147,118 +250,17 @@ body {
   margin-top: 90px;
 }
 
-.photos{
-  height: 450px;
-  width: 90%;
-  margin: 10px auto;
-  overflow: overlay;
-  text-align: -webkit-center;
+.send {
+  height: 175px;
 }
 
-.forms {
-  height: 525px;
-  width: 90%;
-  margin: 10px auto;
-  overflow: overlay;
-  text-align: -webkit-center;
-}
-
-.formsLogin {
-  height: 100vh;
-  width: 90%;
-  margin: auto;
-  margin-top: 0px;
-  overflow: overlay;
-  text-align: -webkit-center;
-}
-
-.buy {
-  height: 81px;
-}
-
-.temp {
-  margin: 12px;
-}
-
-.temp1 {
-  height: 235px;
-  margin-top: 10px;
-}
-
-.description {
-  font-family: 'Reem Kufi', sans-serif;
-  font-size: 30px;
-  font-style: normal;
-  color: black;
-}
-
-h1 {
-  font-family: 'Reem Kufi', sans-serif;
-}
-
-h3 {
-  font-family: 'Reem Kufi', sans-serif;
-  font-size: 23px;
-}
-
-.Categor-button {
-  width: 280px;
-  height: 53px;
-  border-radius: 17px;
-  background: rgba(255, 249, 249, 0.79);
-  font-family: 'Reem Kufi', sans-serif;
-  font-size: 32px;
-  font-style: normal;
-  border: none;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  margin: auto;
-  margin-top: 23px;
-}
+/* -----------------------SharingConfirm---------------------- */
 
 .big-logo {
   height: 155px;
 }
 
-.frameH1 {
-  width: 280px;
-  height: 53px;
-  border-radius: 17px;
-  background: rgba(87, 106, 172, 0.28);
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  margin: auto;
-  margin-top: 23px;
-}
-
-.sharingTitel {
-  color: #16265E;
-  font-weight: inherit;
-  font-size: 40px;
-}
-
-.inFrom {
-  background: #EDE7E7;
-}
-
-input, select {
-  width: 280px;
-  height: 43px;
-  border-radius: 13px;
-  background: rgba(245, 239, 239, 0.63);
-  display: flex;
-  margin-top: 17px;
-  border: none;
-  text-align: center;
-}
-
-::placeholder {
-  font-size: 22px;
-  color: rgb(71, 71, 71);
-  font-family: 'Reem Kufi', sans-serif;
-}
+/* -----------------------NewCategory---------------------- */
 
 .endPage {
   height: 55px;
@@ -269,11 +271,15 @@ input, select {
   height: 123px;
 }
 
-.send {
-  height: 175px;
-}
+/* -----------------------Responsive---------------------- */
 
-.form-logo {
-  height: 190px;
-  margin-top: 50px;
+@media (min-height: 400px)
+{
+  .auth-button {
+    top: 196px
+  }
+  .App-logo {
+    width: 273px;
+    height: 371px;
+  }
 }

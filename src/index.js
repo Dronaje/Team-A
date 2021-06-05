@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import HomePage from '../src/pages/HomePage';
 import ImgDes from './pages/ImageDescription';
+import MyCategors from './pages/UserCategories';
 import Categors from './pages/CategoriesOptions';
 import SharingC from './pages/SharingConfirm';
 import Sharing from './pages/Sharing';
@@ -15,14 +16,16 @@ import SignIn from './pages/SignIn';
 
 ReactDOM.render(
   <BrowserRouter>
-    {/* <App /> */}
+    <App />
+    {/* <SignIn /> */}
+    {/* <Login /> */}
     {/* <HomePage /> */}
     {/* <ImgDes /> */}
+    {/* <MyCategors /> */}
     {/* <Categors /> */}
     {/* <Sharing /> */}
+    {/* <SharingC /> */}
     {/* <NweCategor /> */}
-    <Login />
-    {/* <SignIn /> */}
   </BrowserRouter>,
   document.getElementById("root")
 );

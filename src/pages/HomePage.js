@@ -7,14 +7,36 @@ const HomePage = () =>{
     return(
         <body>
             <Header />      
-            <div className="photos">
-                <img src={temp} className="temp" />
-                <img src={temp} className="temp" />
-                <img src={temp} className="temp" />
-                <img src={temp} className="temp" />
-                <img src={temp} className="temp" />
-                <img src={temp} className="temp" />
-                <img src={temp} className="temp" />
+            <div className="photos"> 
+                {/* לטעון תמונות בצורה דינמית - דוד */}
+                <div >
+                    <img src={temp} className="temp" />
+                    <button className="delete" onclick="">X</button>
+                </div>
+                <div>
+                    <img src={temp} className="temp" />
+                    <button className="delete">X</button>
+                </div>
+                <div>
+                    <img src={temp} className="temp" />
+                    <button className="delete">X</button>
+                </div>
+                <div>
+                    <img src={temp} className="temp" />
+                    <button className="delete">X</button>
+                </div>
+                <div>
+                    <img src={temp} className="temp" />
+                    <button className="delete">X</button>
+                </div>
+                <div>
+                    <img src={temp} className="temp" />
+                    <button className="delete">X</button>
+                </div>
+                <div>
+                    <img src={temp} className="temp" />
+                    <button className="delete">X</button>
+                </div>
             </div>
             <button className="new-button" onClick="">
                 New

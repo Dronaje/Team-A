@@ -20,9 +20,9 @@ ReactDOM.render(
     {/* <App /> */}
     {/* <SignIn /> */}
     {/* <Login /> */}
-    <Mfa />
+    {/* <Mfa /> */}
     {/* <HomePage /> */}
-    {/* <ImgDes /> */}
+    <ImgDes />
     {/* <MyCategors /> */}
     {/* <Categors /> */}
     {/* <Sharing /> */}

@@ -133,6 +133,12 @@ input, select {
   margin-top: 17px;
 }
 
+/* -----------------------MFA---------------------- */
+
+.NoMFA {
+  text-decoration-line: underline;
+}
+
 /* -----------------------HomePage---------------------- */
 
 .photos{

@@ -13,16 +13,18 @@ import Sharing from './pages/Sharing';
 import NweCategor from './pages/NewCategory';
 import Login from './pages/Login';
 import SignIn from './pages/SignIn';
+import Mfa from './pages/MFA';
 
 ReactDOM.render(
   <BrowserRouter>
     {/* <App /> */}
     {/* <SignIn /> */}
     {/* <Login /> */}
+    <Mfa />
     {/* <HomePage /> */}
     {/* <ImgDes /> */}
     {/* <MyCategors /> */}
-    <Categors />
+    {/* <Categors /> */}
     {/* <Sharing /> */}
     {/* <SharingC /> */}
     {/* <NweCategor /> */}

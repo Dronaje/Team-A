@@ -13,7 +13,7 @@ const Sharing = () => {
                         <input type="text" placeholder="Some words.."></input>
                         {/* Change to select */}
                         <input type="text" placeholder="My pictures"></input> 
-                        <button className="form-button" type="submit" onClick=""><img src={send} className="send" /></button>
+                        <button className="form-button" type="submit" onClick=""><img src={send} className="send" alt="logo"/></button>
                     </form>
             </div>
         </body>

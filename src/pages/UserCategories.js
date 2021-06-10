@@ -14,7 +14,7 @@ const UserCategories = () =>{
             </div>
             <button className="new-button" onClick="">
                 New
-                <img src={dronaje} className="small-logo" />
+                <img src={dronaje} className="small-logo" alt="logo"/>
             </button>
         </body>
     )

@@ -14,21 +14,21 @@ const Menu = ({ open, ...props }) => {
 
   return (
     <StyledMenu open={open} aria-hidden={!isHidden} {...props}>
-      <a href="/" tabIndex={tabIndex}>
+      <a href="/homepage" tabIndex={tabIndex}>
         All photos
-        <span aria-hidden="true"><img src={AllPhotos} /></span>
+        <span aria-hidden="true"><img src={AllPhotos} alt="img1"/></span>
       </a>
-      <a href="/" tabIndex={tabIndex}>
+      <a href="/categories" tabIndex={tabIndex}>
         Categories
-        <span aria-hidden="true"><img src={Categories} /></span>
+        <span aria-hidden="true"><img src={Categories} alt="img2"/></span>
         </a>
-      <a href="/" tabIndex={tabIndex}>
+      <a href="/sharing" tabIndex={tabIndex}>
         Send to a friend
-        <span aria-hidden="true"><img src={Share} /></span>
+        <span aria-hidden="true"><img src={Share} alt="img3"/></span>
         </a>
       <a href="/" tabIndex={tabIndex}>
         Log Out
-        <span aria-hidden="true"><img src={LogOut} /></span>
+        <span aria-hidden="true"><img src={LogOut} alt="img4"/></span>
         </a>
     </StyledMenu>
   )

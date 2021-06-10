@@ -7,7 +7,7 @@ const SharingConfirm = () =>{
         <body>
             <Header />      
             <div className="photos">
-                <img src={dronaje} className="big-logo" />
+                <img src={dronaje} className="big-logo" alt="logo"/>
                 <h1>Great! :)</h1>
                 <h3>now (dinami!) will enjoy of your photo!</h3>
             </div>

@@ -12,7 +12,7 @@ const NewCategory = () => {
                     <input type="text" placeholder="Choose a photo" className="endPage"></input>
                     <input type="text" placeholder="Category" className="endPage"></input>
                     <input type="text" placeholder="Description.." className="endPage"></input> 
-                    <button className="form-button" type="submit" onClick=""><img src={add} className="add" /></button>
+                    <button className="form-button" type="submit" onClick=""><img src={add} className="add" alt="logo"/></button>
                 </form>
             </div>
         </body>

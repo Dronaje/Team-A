@@ -32,9 +32,8 @@ const CategoriesOptions = () => {
         })
             .then((res) => res.json())
             .then((body) => {
-                setUserData(body);
+                setUserData("Video",body);
             });
-
 
             fetch(`https://rzlmwxfkse.execute-api.eu-west-1.amazonaws.com/media/image/thumbnails?userID=${userId}`,{  
                      method: 'GET',
@@ -45,15 +44,11 @@ const CategoriesOptions = () => {
             }, mode: 'cors'})
         .then((res) => res.json())
         .then((body) => {
-        console.log(body);
         // const x = JSON.parse(body.body);
+        // console.log(x)
         setPictures(body.body);
+
         });
-
-
-
-
-
 
     }, []);
 

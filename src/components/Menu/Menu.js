@@ -15,7 +15,7 @@ const Menu = ({ open, ...props }) => {
   return (
     <StyledMenu open={open} aria-hidden={!isHidden} {...props}>
       <a href="/homepage" tabIndex={tabIndex}>
-        All photos
+        Dashboard
         <span aria-hidden="true"><img src={AllPhotos} alt="img1"/></span>
       </a>
       <a href="/categories" tabIndex={tabIndex}>

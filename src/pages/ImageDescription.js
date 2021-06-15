@@ -20,7 +20,25 @@ import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 
-  
+import {
+    EmailShareButton,
+    WhatsappShareButton
+} from "react-share";
+
+
+
+import {
+    EmailIcon,
+    WhatsappIcon
+} from "react-share";
+
+
+const USERNAME ="";
+const emailSubject ="Media shered from dronaje.com";
+const emailBody = "The dronaje.com user"+ USERNAME+ " \nhas shared with you this link to media file : \n\n "
+
+
+
 
 
 const ImageDescription = () => {
@@ -34,7 +52,12 @@ const ImageDescription = () => {
     const [imageData, setImageData] = useState();
     const [videoData, setVideoData] = useState();
     const [isLoading, setIsLoading] = useState(false);
-    
+    const [shortURL, setShortURL] = useState('');
+    const [longURL, setlongURL] = useState('');
+    const [sherButtonStyle, setSherButtonStyle] = useState({display:"none"});
+
+
+
     const classes = useStyles();
 
     useEffect(() => {
@@ -49,7 +72,8 @@ const ImageDescription = () => {
                 }, mode: 'cors'})
                 .then((res) => res.json())
                 .then((body) => {
-                    setImageData(body.body)
+                    setImageData(body.body);
+                    setlongURL(body.body.url);
                     setIsLoading(true);
             });
         }
@@ -64,6 +88,8 @@ const ImageDescription = () => {
                 .then((res) => res.json())
                 .then((body) => {
                     setVideoData(body)
+                    console.log(body.body.url);
+                    setlongURL(body.body.url);
                     setIsLoading(true);
                 }).catch((error)=>{
                 console.log(error);
@@ -82,6 +108,29 @@ const ImageDescription = () => {
             </div>
         )
     }
+
+
+
+    function createShortUrl() {
+        const requestOptions = {
+            method: 'POST',
+            headers:
+            {
+              "x-api-key": "TUIlOHUyE281a3xaws73i1flTFDVFnaBaMnAkWWb",
+              Accept: '*/*'
+            },
+            mode: 'cors',
+            body: JSON.stringify({long_url:longURL})
+          }
+
+      fetch("https://url.dronaje.com/create", requestOptions)
+        .then(response => { return response.json() }).then(data => {console.log(data.short_url);setShortURL(data.short_url) }).catch(error => console.log('error============:', error));
+          setSherButtonStyle({display:"inline"})
+    };
+
+
+
+
 
     return (
         <div>
@@ -122,6 +171,15 @@ const ImageDescription = () => {
                 <CardActions disableSpacing>
                 </CardActions>
             </Card>}
+
+            <button onClick={createShortUrl}>
+            <h1>Share </h1>
+               </button>
+            <EmailShareButton className="shareButon" style={sherButtonStyle} subject = {emailSubject} body={emailBody}   url={shortURL} > <EmailIcon></EmailIcon></EmailShareButton>
+ 
+          
+            <WhatsappShareButton className="shareButon" style={sherButtonStyle}url={shortURL}><WhatsappIcon></WhatsappIcon> </WhatsappShareButton>
+        
              <button className="buy-button">
                 <img src={buy} className="buy" alt="img2"/>
             </button>

@@ -13,7 +13,7 @@ const Error404Page = () =>{
 
     return(
         <div style={{backgroundColor:'white' , position: 'absolute', height: '110%', width:'100%'}}>
-            <h3 style={{color:"blue", padding:0}}>הניווט אינו קיים במערכת</h3>
+            <h3 style={{color:"blue", padding:0}}>This rout doesn't exist</h3>
             <img src={error404} alt="404" />
             <ButtonGroup disableElevation variant="contained" color="primary">
                 {userLogerdInFlag&&<Button onClick={ ()=>{window.location.replace('/auth')}}>Sign In to the system</Button>}

@@ -33,7 +33,7 @@ const Signup: React.FC = () => {
   const [confirmPassword, setConfirmPassword] = React.useState("none");
   const [birthdate, setBirthdate] = React.useState("none");
   const [value, setValue] = React.useState('female');
-  const [errorMSG, setErrorMSG] = React.useState("חסרים פרטים");
+  const [errorMSG, setErrorMSG] = React.useState("Details are missing");
   const [massageFlag, setMassageFlag] = React.useState(false);
 
   const history = useHistory();
@@ -76,15 +76,15 @@ const Signup: React.FC = () => {
     const validationSubmit = (e: React.SyntheticEvent<Element, Event>)=>{
       e.preventDefault();
     if(email==="none" || password==="none" || name==="none" || phone==="none" || confirmPassword==="none" || birthdate==="none"){
-      setErrorMSG("חסרים פרטים");
+      setErrorMSG("Details are missing");
       setMassageFlag(true);
     }
     else if(password !== confirmPassword){
-      setErrorMSG("סיסמאות לא נכונות");
+      setErrorMSG("The passwords are different");
       setMassageFlag(true);
     }
     else if(phone[0] !== '+'){
-      setErrorMSG("+מספר טלפון צריך להיות 972");
+      setErrorMSG("Phone numbur format is +972533062400");
       setMassageFlag(true);
     }
     else{
@@ -110,7 +110,7 @@ const Signup: React.FC = () => {
       localStorage.setItem('email', email);
       history.push("/mfa");
     } catch (error) {
-      setErrorMSG("פרטים לא נכונים");
+      setErrorMSG("Incorrect input");
       setMassageFlag(true)
     }
     setLoading(false);

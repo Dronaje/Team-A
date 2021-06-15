@@ -22,10 +22,10 @@ const Menu = ({ open, ...props }) => {
         Search
         <span aria-hidden="true"><img src={Search} alt="img2"/></span>
         </a>
-      <a href="/sharing" tabIndex={tabIndex}>
+      {/* <a href="/sharing" tabIndex={tabIndex}>
         Send to a friend
         <span aria-hidden="true"><img src={Share} alt="img3"/></span>
-        </a>
+        </a> */}
       <a href="/" tabIndex={tabIndex}>
         Log Out
         <span aria-hidden="true"><img src={LogOut} alt="img4"/></span>

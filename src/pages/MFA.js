@@ -19,7 +19,7 @@ const DLink = styled(Link)({
 
 const MFA= () => {
   const [loading, setLoading] = React.useState(false);
-  const [errorMSG, setErrorMSG] = React.useState("חסרים פרטים");
+  const [errorMSG, setErrorMSG] = React.useState("Details are missing");
   const [massageFlag, setMassageFlag] = React.useState(false);
   const [code, setCode] = React.useState("none");
 
@@ -33,7 +33,7 @@ const MFA= () => {
   const validationSubmit = (e)=>{
       e.preventDefault();
     if(code==="none"){
-      setErrorMSG("חסרים פרטים");
+      setErrorMSG("Details are missing");
       setMassageFlag(true);
     }
     else{

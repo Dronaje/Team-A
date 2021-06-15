@@ -80,6 +80,7 @@ const VideoForm = () => {
             }
             e.preventDefault();
         }
+        window.location.replace('/homepage');
     }
 
     const handleLocation = (event) => {

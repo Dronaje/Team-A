@@ -84,6 +84,7 @@ const ImageForm = () =>{
     };
         reader.readAsDataURL(file);
   e.preventDefault();
+  window.location.replace('/homepage');
 }
 
     const handleLocation = (event) => {

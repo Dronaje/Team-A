@@ -17,7 +17,7 @@ const DLink = styled(Link)({
   textAlign: "right",
 });
 
-const MFA: React.FC = () => {
+const MFA= () => {
   const [loading, setLoading] = React.useState(false);
   const [errorMSG, setErrorMSG] = React.useState("חסרים פרטים");
   const [massageFlag, setMassageFlag] = React.useState(false);
@@ -30,7 +30,7 @@ const MFA: React.FC = () => {
     setCode(() => ( value ))
   } 
 
-  const validationSubmit = (e: React.SyntheticEvent<Element, Event>)=>{
+  const validationSubmit = (e)=>{
       e.preventDefault();
     if(code==="none"){
       setErrorMSG("חסרים פרטים");
@@ -41,7 +41,8 @@ const MFA: React.FC = () => {
     }
   }
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     setLoading(true);
     try {
       const email = localStorage.getItem('email');
@@ -79,7 +80,7 @@ const MFA: React.FC = () => {
         {loading && <CircularProgress size={20} style={{ marginRight: 20 }} />}
         Verify your account
       </Button>
-      <DLink to="/signin">make an account &rarr;</DLink>
+      <DLink to="/signin">Make an account &rarr;</DLink>
     </form>
     </div>
     </div>

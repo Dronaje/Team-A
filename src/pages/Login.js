@@ -17,7 +17,7 @@ const DLink = styled(Link)({
   textAlign: "right",
 });
 
-const Login: React.FC = () => {
+const Login = () => {
   const [loading, setLoading] = React.useState(false);
   const history = useHistory();
   const [email, setEmail] = React.useState("none");
@@ -36,7 +36,7 @@ const Login: React.FC = () => {
     } 
 
 
-  const validationSubmit = (e: React.SyntheticEvent<Element, Event>)=>{
+  const validationSubmit = (e)=>{
       e.preventDefault();
     if(email==="none" || password==="none"){
       setErrorMSG("חסרים פרטים");

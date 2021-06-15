@@ -23,7 +23,7 @@ const Login = () => {
   const [email, setEmail] = React.useState("none");
   const [password, setPassword] = React.useState("none");
   const [massageFlag, setMassageFlag] = React.useState(false);
-  const [errorMSG, setErrorMSG] = React.useState("חסרים פרטים");
+  const [errorMSG, setErrorMSG] = React.useState("Details are missing");
 
     const handleEmail = (event) => {
         const { target: { name, value } } = event;
@@ -39,7 +39,7 @@ const Login = () => {
   const validationSubmit = (e)=>{
       e.preventDefault();
     if(email==="none" || password==="none"){
-      setErrorMSG("חסרים פרטים");
+      setErrorMSG("Details are missing");
       setMassageFlag(true);
     }
     else{
@@ -55,7 +55,7 @@ const Login = () => {
       console.log("Success!!", "Login Successfully", "success");
       history.push("/homepage");
     } catch (error) {
-      setErrorMSG("פרטים לא נכונים");
+      setErrorMSG("Invalid input");
       setMassageFlag(true)
     }
     setLoading(false);

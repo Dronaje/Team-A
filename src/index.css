@@ -1,0 +1,305 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap');
+.AppContainer {
+  text-align: center;
+}
+
+body {
+  background-color: #849CF2;
+  width: 100%;
+}
+
+h1 {
+  font-family: 'Reem Kufi', sans-serif;
+}
+
+h3 {
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 23px;
+}
+
+/* -----------------------header---------------------- */
+
+.head {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  height: 80px;
+}
+
+.pages-logo {
+  margin: auto;
+}
+
+.dronage-logo {
+  height: 60px;
+  position: absolute;
+  right: 10px;
+  top: 12px;
+}
+
+/* -----------------------Field of form---------------------- */
+
+input, select {
+  width: 95%;
+  height: 43px;
+  border-radius: 13px;
+  background: rgba(245, 239, 239, 0.63);
+  display: flex;
+  margin-top: 17px;
+  border: none;
+  text-align: center;
+}
+
+::placeholder {
+  font-size: 22px;
+  color: rgb(71, 71, 71);
+  font-family: 'Reem Kufi', sans-serif;
+}
+
+/* -----------------------Auth---------------------- */
+
+.App-header {
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-logo {
+  position: absolute;
+  width: 330px;
+  height: 418px;
+  top: 50px;
+}
+
+.auth-button{
+  width: 185px;
+  height: 53px;
+  border-radius: 20px;
+  background-color: #849CF2;
+  position: relative;
+  top: 165px;
+  margin-top: 20px;
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 25px;
+  font-style: normal;
+  letter-spacing: 0em;
+  border: none;
+}
+
+/* -----------------------SignIn & Login---------------------- */
+
+.formBody {
+  background-color: white;
+  min-height: 100vh;
+}
+
+.formsLogin {
+  height: 100vh;
+  width: 90%;
+  margin: auto;
+  margin-top: 0px;
+  overflow: overlay;
+  text-align: -webkit-center;
+}
+
+.form-logo {
+  height: 190px;
+  margin-top: 50px;
+}
+
+.inFrom {
+  /* background: #EDE7E7; */
+  /* border: 1px gray solid; */
+}
+
+.buttonLogin {
+  width: 95%;
+  height: 43px;
+  border-radius: 13px;
+  background: rgba(45, 61, 202, 0.65);
+  margin-top: 20px;
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  border: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: auto;
+  margin-top: 17px;
+}
+
+/* -----------------------MFA---------------------- */
+
+.NoMFA {
+  text-decoration-line: underline;
+}
+
+/* -----------------------HomePage---------------------- */
+.photos{
+  height: 350px;
+  width: 90%;
+  margin: auto;
+  overflow: overlay;
+  text-align: -webkit-center;
+  border-bottom: solid;
+}
+
+.MuiGridListTile-imgFullHeight {
+  width: 100%;
+}
+
+.new-button {
+  width: 300px;
+  height: 53px;
+  border-radius: 30px;
+  margin-top: 20px;
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  border: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: auto;
+}
+
+.small-logo {
+  height: 55px;
+}
+
+/* -----------------------ImageDescription---------------------- */
+
+.temp1 {
+  height: 235px;
+  margin-top: 10px;
+}
+
+.description {
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  color: black;
+}
+
+.buy-button {
+  background-color: transparent;
+  width: 84px;
+  height: 78px;
+  border-radius: 60px;
+  border: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: auto;
+}
+
+.buy {
+  height: 81px;
+}
+
+/* -----------------------UserCategories---------------------- */
+
+.Categor-button {
+  width: 95%;
+  height: 53px;
+  border-radius: 17px;
+  background: rgba(255, 249, 249, 0.79);
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  border: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: auto;
+  margin-top: 23px;
+}
+
+/* -----------------------CategoriesOptions---------------------- */
+
+.frameH1 {
+  width: 95%;
+  height: 53px;
+  border-radius: 17px;
+  background: rgba(87, 106, 172, 0.28);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: auto;
+  margin-top: 23px;
+}
+
+/* -----------------------Sharing---------------------- */
+
+.sharingTitel {
+  color: #16265E;
+  font-weight: inherit;
+  font-size: 40px;
+}
+
+.form-button {
+  background-color: transparent;
+  width: 110px;
+  height: 106px;
+  border-radius: 60px;
+  border: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  marker-end: 0px;
+  margin-top: 90px;
+}
+
+.send {
+  height: 175px;
+}
+
+/* -----------------------SharingConfirm---------------------- */
+
+.big-logo {
+  height: 155px;
+}
+
+/* -----------------------NewCategory---------------------- */
+
+.endPage {
+  height: 55px;
+  margin-top: 25px;
+}
+
+.add{
+  height: 123px;
+}
+
+/* -----------------------Responsive---------------------- */
+
+@media (min-height: 400px)
+{
+  .auth-button {
+    top: 196px
+  }
+  .App-logo {
+    width: 273px;
+    height: 371px;
+  }
+}

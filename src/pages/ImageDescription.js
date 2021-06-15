@@ -55,7 +55,7 @@ const ImageDescription = () => {
     const [shortURL, setShortURL] = useState('');
     const [longURL, setlongURL] = useState('');
     const [sherButtonStyle, setSherButtonStyle] = useState({display:"none"});
-
+    const [sherMainButtonStyle,setSherMainButtonStyle] = useState({display:"inline",backgroundColor:"aliceblue"});
 
 
     const classes = useStyles();
@@ -125,7 +125,8 @@ const ImageDescription = () => {
 
       fetch("https://url.dronaje.com/create", requestOptions)
         .then(response => { return response.json() }).then(data => {console.log(data.short_url);setShortURL(data.short_url) }).catch(error => console.log('error============:', error));
-          setSherButtonStyle({display:"inline"})
+          setSherButtonStyle({display:"inline"});
+          setSherMainButtonStyle({display:"none"});
     };
 
 
@@ -172,7 +173,7 @@ const ImageDescription = () => {
                 </CardActions>
             </Card>}
 
-            <button onClick={createShortUrl}>
+            <button onClick={createShortUrl} style={sherMainButtonStyle}>
             <h1>Share </h1>
                </button>
             <EmailShareButton className="shareButon" style={sherButtonStyle} subject = {emailSubject} body={emailBody}   url={shortURL} > <EmailIcon></EmailIcon></EmailShareButton>

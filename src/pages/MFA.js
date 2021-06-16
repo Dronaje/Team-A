@@ -58,7 +58,6 @@ const MFA = () => {
       const user= localStorage.getItem("user");
 
       await Auth.confirmSignUp(email, code);
-      console.log(user);
       // await Auth.confirmSignIn(
       //   user, // Return object from Auth.signIn()
       //   code // Confirmation code

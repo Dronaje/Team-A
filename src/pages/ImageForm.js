@@ -22,13 +22,10 @@ const ImageForm = () =>{
 
     const videoFormHandler = async (e) => {
         const file = e.target.file.files[0];
-        console.log(e.target.file.files[0]);
 
         const reader = new FileReader();
         reader.onloadend = async () => {
-            const base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
-            console.log(base64String);
-            
+            const base64String = reader.result.replace("data:", "").replace(/^.+,/, "");            
             let info ={
                 title: title,
                 location: location,
@@ -42,21 +39,15 @@ const ImageForm = () =>{
             imageInfo:info,
             object: base64String
         }
-
-        console.log(body)
          let formIsValid = true;
-            console.log(body.imageInfo.title)
-
             if (body.imageInfo.title === '') { formIsValid = false; }
             if (body.imageInfo.location === '') { formIsValid = false; }
             if (body.imageInfo.tags === '') { formIsValid = false; }
             if (body.imageInfo.description === '') { formIsValid = false; }
             if (reader.readyState === 0) { formIsValid = false; }
-            console.log(body)
 
         const url = 'https://rzlmwxfkse.execute-api.eu-west-1.amazonaws.com/media/image'
          if (!formIsValid) {
-                console.log("ffff")
                 alert("Form has errors.")
             }
             else{
@@ -74,11 +65,9 @@ const ImageForm = () =>{
                  body: JSON.stringify(body),
              })
             .then(res => res.json()).then(res => {
-                console.log(res);
                 // window.location.replace('/homepage');
             });  
         } catch(error){
-            console.log(error);
         }
         }
     };

@@ -17,7 +17,7 @@ const Menu = ({ open, ...props }) => {
         Dashboard
         <span aria-hidden="true"><img src={AllPhotos} alt="img1"/></span>
       </a>
-      <a href="/categories" tabIndex={tabIndex}>
+      <a href="/options" tabIndex={tabIndex}>
         Search
         <span aria-hidden="true"><img src={Search} alt="img2"/></span>
         </a>

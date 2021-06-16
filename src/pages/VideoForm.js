@@ -38,7 +38,6 @@ const VideoForm = () => {
         }
         const url = 'https://a1v4ubfe9f.execute-api.eu-west-1.amazonaws.com/media/video'
 
-        console.log(body);
         if (body.title === '') {formIsValid = false;}
         if (body.location === '') {formIsValid = false;}
         if (body.date === '') {formIsValid = false;}
@@ -49,7 +48,6 @@ const VideoForm = () => {
         if (!formIsValid) { alert("Form has errors.") }
         else {
             try {
-                console.log(body);
                 fetch(url,
                     {
                         method: 'POST',
@@ -64,7 +62,6 @@ const VideoForm = () => {
                     })
                     .then(res => res.json())
                     .then((res) => {
-                        console.log("RESPONSEEE", res);
                         fetch(res.Url, {
                             headers: {
                                 "Content-Type": body.file.type,

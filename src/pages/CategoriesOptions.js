@@ -50,11 +50,6 @@ const CategoriesOptions = () => {
 
     }, []);
 
-    console.log("Data", userData);
-    console.log("video data", videoData);
-    console.log("image data", imageData);
-
-    console.log("search", search);
 
     const handelSearch = (event) => {
         setSearch(event);
@@ -67,7 +62,6 @@ const CategoriesOptions = () => {
         console.log("filter function", videoData.filter(data => (data.Tag?.toLowerCase()).includes(search?.toLowerCase())));
     }
 
-    // console.log("filter", filterData);
 
 
     return (

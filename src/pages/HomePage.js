@@ -24,7 +24,6 @@ const HomePage = () => {
   const [filteredPictures, setFilteredPictures] = useState([]);
   const [filteredVideos, setFilteredVideos] = useState([]);
   const [userId, setUserID] = useState(localStorage.getItem('user'));
-  console.log("userId",userId)
 
   const classes = useStyles();
 
@@ -40,7 +39,6 @@ const HomePage = () => {
       .then((res) => res.json())
       .then((body) => {
         setVideos(body);
-        console.log(body);
       }).catch((error) => {
         window.location.replace('/500');
       });
@@ -55,8 +53,6 @@ const HomePage = () => {
     })
       .then((res) => res.json())
       .then((body) => {
-        console.log(body);
-        // const x = JSON.parse(body.body);
         setPictures(body.body);
       }).catch((error) => {
         window.location.replace('/500');

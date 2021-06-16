@@ -99,13 +99,12 @@ const HomePage = () => {
           </GridListTile>
           {videos.map((video) => (
             <GridListTile key={video.ID} className="photo">
-              <img src={video.URL} alt={video.id} style={{ cursor: "pointer" }}
+              <img src={video.URL} alt={video.ID} style={{ cursor: "pointer" }}
                 onClick={() => {
                   localStorage.setItem('type', 'video');
                   localStorage.setItem('video', video.ID);
-                  console.log(video.id)
                   localStorage.setItem('userId', userId);
-                  window.location.replace('/description')
+                  window.location.replace('/description');
                 }} />
               <GridListTileBar
                 title={video.Title}
@@ -142,3 +141,5 @@ const useStyles = makeStyles((theme) => ({
     color: 'rgba(255, 255, 255, 0.54)',
   },
 }));
+
+// line 108 :   window.location.replace('/description')

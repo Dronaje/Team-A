@@ -33,7 +33,8 @@ const VideoForm = () => {
             description: description,
             date: date,
             tag: tag,
-            file: e.target.file.files[0]
+            file: e.target.file.files[0],
+            fileType: e.target.file.files[0].type
         }
         const url = 'https://a1v4ubfe9f.execute-api.eu-west-1.amazonaws.com/media/video'
 
@@ -48,11 +49,13 @@ const VideoForm = () => {
         if (!formIsValid) { alert("Form has errors.") }
         else {
             try {
+                console.log(body);
                 fetch(url,
                     {
                         method: 'POST',
                         headers: {
                             Accept: '*/*',
+                            "x-api-key":"wqpfNFx41y9jO5WCNZngS5aLd1v4xmiH9coIEzmo"
                         },
                         isBase64Encoded: 'True',
                         mode: 'cors',
@@ -64,7 +67,8 @@ const VideoForm = () => {
                         console.log("RESPONSEEE", res);
                         fetch(res.Url, {
                             headers: {
-                                "Content-Type": body.file.type
+                                "Content-Type": body.file.type,
+                                Accept: '*/*'
                             },
                             method: 'PUT',
                             mode: 'cors',
@@ -72,15 +76,16 @@ const VideoForm = () => {
                         }
                         )
                             .then((res) => window.location.replace('/homepage'))
-                            .catch((err) => console.log(err))
+                            .catch((err) => console.log("errr ==>>  " ,err))
+                            
                     })
             }
             catch (error) {
-                console.log(error);
+                console.log("errror   ===>>  " ,error);
             }
             e.preventDefault();
         }
-        window.location.replace('/homepage');
+        // window.location.replace('/homepage');
     }
 
     const handleLocation = (event) => {

@@ -87,9 +87,9 @@ const ImageDescription = () => {
                 }, mode: 'cors'})
                 .then((res) => res.json())
                 .then((body) => {
-                    setVideoData(body)
-                    console.log(body.body.url);
-                    setlongURL(body.body.url);
+                    setVideoData(body);
+                    console.log(body);
+                    setlongURL(body.URL);
                     setIsLoading(true);
                 }).catch((error)=>{
                 console.log(error);
@@ -124,7 +124,7 @@ const ImageDescription = () => {
           }
 
       fetch("https://url.dronaje.com/create", requestOptions)
-        .then(response => { return response.json() }).then(data => {console.log(data.short_url);setShortURL(data.short_url) }).catch(error => console.log('error============:', error));
+        .then(response => { return response.json() }).then(data => { setShortURL(data.short_url) }).catch(error => console.log('error============:', error));
           setSherButtonStyle({display:"inline"});
           setSherMainButtonStyle({display:"none"});
     };

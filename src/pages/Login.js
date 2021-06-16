@@ -23,16 +23,25 @@ const Login = () => {
   const [email, setEmail] = React.useState("none");
   const [password, setPassword] = React.useState("none");
   const [massageFlag, setMassageFlag] = React.useState(false);
-  const [errorMSG, setErrorMSG] = React.useState("Details are missing");
+  const [errorMSG, setErrorMSG] = React.useState("חסרים פרטים");
+  const [code, setCode] = React.useState("none");
+
+
+
+  
 
     const handleEmail = (event) => {
         const { target: { name, value } } = event;
         setEmail(() => ( value ))
+        console.log(email)
+
     } 
 
      const handlePassword = (event) => {
         const { target: { name, value } } = event;
         setPassword(() => ( value ))
+        console.log(password)
+
     } 
 
 
@@ -47,19 +56,37 @@ const Login = () => {
     }
   }
 
+  async function resendConfirmationCode() {
+    try {
+        await Auth.resendSignUp(email);
+        console.log('code resent successfully');
+    } catch (err) {
+        console.log('error resending code: ', err);
+    }
+}
+
+
+
   const handleSubmit = async () => {
     localStorage.setItem('user', email);
     setLoading(true);
     try {
-      await Auth.signIn(email, password);
+      const user = await Auth.signIn(email, password);
+      // line 74 - cognito user
       console.log("Success!!", "Login Successfully", "success");
-      history.push("/homepage");
+      resendConfirmationCode()
+      console.log(user);
+      localStorage.setItem('getUser', user);
+      history.push("/mfa");
     } catch (error) {
       setErrorMSG("Invalid input");
       setMassageFlag(true)
     }
     setLoading(false);
   };
+
+
+  
 
   return (
       <div className="formBody">

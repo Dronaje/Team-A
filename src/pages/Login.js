@@ -33,15 +33,11 @@ const Login = () => {
     const handleEmail = (event) => {
         const { target: { name, value } } = event;
         setEmail(() => ( value ))
-        console.log(email)
-
     } 
 
      const handlePassword = (event) => {
         const { target: { name, value } } = event;
         setPassword(() => ( value ))
-        console.log(password)
-
     } 
 
 
@@ -59,9 +55,7 @@ const Login = () => {
   async function resendConfirmationCode() {
     try {
         await Auth.resendSignUp(email);
-        console.log('code resent successfully');
     } catch (err) {
-        console.log('error resending code: ', err);
     }
 }
 
@@ -72,10 +66,6 @@ const Login = () => {
     setLoading(true);
     try {
       const user = await Auth.signIn(email, password);
-      // line 74 - cognito user
-      console.log("Success!!", "Login Successfully", "success");
-      // resendConfirmationCode()
-      console.log(user);
       localStorage.setItem('getUser', user);
       history.push("/homepage");
     } catch (error) {

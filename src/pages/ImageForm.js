@@ -25,8 +25,7 @@ const ImageForm = () =>{
 
         const reader = new FileReader();
         reader.onloadend = async () => {
-            const base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
-            
+            const base64String = reader.result.replace("data:", "").replace(/^.+,/, "");            
             let info ={
                 title: title,
                 location: location,
@@ -40,9 +39,7 @@ const ImageForm = () =>{
             imageInfo:info,
             object: base64String
         }
-
          let formIsValid = true;
-
             if (body.imageInfo.title === '') { formIsValid = false; }
             if (body.imageInfo.location === '') { formIsValid = false; }
             if (body.imageInfo.tags === '') { formIsValid = false; }
@@ -71,7 +68,6 @@ const ImageForm = () =>{
                 window.location.replace('/homepage');
             });  
         } catch(error){
-            console.log(error);
         }
         }
     };

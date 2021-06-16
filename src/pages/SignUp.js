@@ -23,7 +23,7 @@ const DLink = styled(Link)({
   textAlign: "right",
 });
 
-const Signup: React.FC = () => {
+const Signup= () => {
   const [loading, setLoading] = React.useState(false);
 
   const [name, setName] = React.useState("none");
@@ -73,7 +73,7 @@ const Signup: React.FC = () => {
     setBirthdate(() => ( value ))
   } 
 
-    const validationSubmit = (e: React.SyntheticEvent<Element, Event>)=>{
+    const validationSubmit = (e)=>{
       e.preventDefault();
     if(email==="none" || password==="none" || name==="none" || phone==="none" || confirmPassword==="none" || birthdate==="none"){
       setErrorMSG("חסרים פרטים");

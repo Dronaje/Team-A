@@ -24,7 +24,7 @@ const HomePage = () =>{
     const [filteredPictures, setFilteredPictures] = useState([]);
     const [filteredVideos, setFilteredVideos] = useState([]);
 	const [userId, setUserID] = useState(localStorage.getItem('user'));
-
+  console.log(userId);
     const classes = useStyles();
 
     useEffect(() => {

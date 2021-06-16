@@ -74,10 +74,10 @@ const Login = () => {
       const user = await Auth.signIn(email, password);
       // line 74 - cognito user
       console.log("Success!!", "Login Successfully", "success");
-      resendConfirmationCode()
+      // resendConfirmationCode()
       console.log(user);
       localStorage.setItem('getUser', user);
-      history.push("/mfa");
+      history.push("/homepage");
     } catch (error) {
       setErrorMSG("Invalid input");
       setMassageFlag(true)

@@ -90,7 +90,6 @@ const ImageDescription = () => {
                 .then((res) => res.json())
                 .then((body) => {
                     setVideoData(body);
-                    setlongURL(body.URL);
                     setIsLoading(true);
                 }).catch((error) => {
                     console.log(error);

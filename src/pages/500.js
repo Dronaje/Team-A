@@ -13,7 +13,7 @@ const Error500Page = () =>{
 
     return(
         <div style={{backgroundColor:'white' , position: 'absolute', height: '110%', width:'100%'}}>
-            <h3 style={{color:"blue", padding:0}}>אנחנו מתנצלים אך קרתה תקלה במערכת</h3>
+            <h3 style={{color:"blue", padding:0}}>Sorry , an unexpected failure is occurred</h3>
             <img src={error404} alt="404" />
             <ButtonGroup disableElevation variant="contained" color="primary">
                 {userLogerdInFlag&&<Button onClick={ ()=>{window.location.replace('/auth')}}>Sign In to the system</Button>}

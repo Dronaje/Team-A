@@ -19,7 +19,7 @@ const DLink = styled(Link)({
 
 const MFA = () => {
   const [loading, setLoading] = React.useState(false);
-  const [errorMSG, setErrorMSG] = React.useState("חסרים פרטים");
+  const [errorMSG, setErrorMSG] = React.useState("Details are missing");
   const [massageFlag, setMassageFlag] = React.useState(false);
   const [code, setCode] = React.useState("none");
 
@@ -32,10 +32,10 @@ const MFA = () => {
     setCode(() => value);
   };
 
-  const validationSubmit = (e) => {
-    e.preventDefault();
-    if (code === "none") {
-      setErrorMSG("חסרים פרטים");
+  const validationSubmit = (e)=>{
+      e.preventDefault();
+    if(code==="none"){
+      setErrorMSG("Details are missing");
       setMassageFlag(true);
     } else {
       handleSubmit();
@@ -66,7 +66,7 @@ const MFA = () => {
       // );
       history.push("/homepage");
     } catch (error) {
-      setErrorMSG("קוד לא נכון");
+      setErrorMSG("Wrong verification code");
       setMassageFlag(true);
     }
     setLoading(false);

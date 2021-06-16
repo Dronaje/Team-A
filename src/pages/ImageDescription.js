@@ -20,7 +20,25 @@ import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 
-  
+import {
+    EmailShareButton,
+    WhatsappShareButton
+} from "react-share";
+
+
+
+import {
+    EmailIcon,
+    WhatsappIcon
+} from "react-share";
+
+
+const USERNAME ="";
+const emailSubject ="Media shered from dronaje.com";
+const emailBody = "The dronaje.com user"+ USERNAME+ " \nhas shared with you this link to media file : \n\n "
+
+
+
 
 
 const ImageDescription = () => {
@@ -28,15 +46,24 @@ const ImageDescription = () => {
     const [type, setType] = useState(localStorage.getItem('type'));
     const [objectID, setObjectID] = useState('');
     const [expanded, setExpanded] = React.useState(false);
-    
-    const classes = useStyles();
+	const [pictureId, setPictureId] = useState(localStorage.getItem('picture'));
+	const [videoId, setVideoId] = useState(localStorage.getItem('video'));
+	const [userId, setUserId] = useState(localStorage.getItem('userId'));
+    const [imageData, setImageData] = useState();
+    const [videoData, setVideoData] = useState();
+    const [isLoading, setIsLoading] = useState(false);
+    const [shortURL, setShortURL] = useState('');
+    const [longURL, setlongURL] = useState('');
+    const [sherButtonStyle, setSherButtonStyle] = useState({display:"none"});
+    const [sherMainButtonStyle,setSherMainButtonStyle] = useState({display:"inline",backgroundColor:"aliceblue"});
 
+
+    const classes = useStyles();
 
     useEffect(() => {
         if(type === 'picture'){
             setObjectID(localStorage.getItem('picture'));
-                // fetch(`https://rzlmwxfkse.execute-api.eu-west-1.amazonaws.com/media/image?userID=guy&imageID=${objectID}`,{  
-                fetch(`https://rzlmwxfkse.execute-api.eu-west-1.amazonaws.com/media/image?userID=guy&imageID=422ee2eb`,{  
+                fetch(`https://rzlmwxfkse.execute-api.eu-west-1.amazonaws.com/media/image?userID=${userId}&imageID=${pictureId}`,{  
                 method: 'GET',
                 headers: {
                     "x-api-key" : "D88N0sZS9o7VDe3pHyibA24YSiaLxcpF9ZYBmj5H",
@@ -44,27 +71,29 @@ const ImageDescription = () => {
                     "Content-Type" : 'application/json'
                 }, mode: 'cors'})
                 .then((res) => res.json())
-                .then((body) => {;
-                    const jes = JSON.parse(body.body)
-                    setObject(jes);
-                    console.log(jes);
+                .then((body) => {
+                    setImageData(body.body);
+                    setlongURL(body.body.url);
+                    setIsLoading(true);
             });
         }
         else{
-            fetch('https://a1v4ubfe9f.execute-api.eu-west-1.amazonaws.com/media/video?userID=ariellunen@gmail.com&videoID=1623511003181',{  
+            fetch(`https://a1v4ubfe9f.execute-api.eu-west-1.amazonaws.com/media/video?userID=${userId}&videoID=${videoId}`,{  
                 method: 'GET',
                  headers: {
                     "x-api-key" : "KhNSr9NzTa100rDFqyWQ77Vd2gDwRiqX4CvwgGyt",
                     "Accept": '*/*',
                      "Content-Type" : 'application/json'
                 }, mode: 'cors'})
-          .then((res) => res.json())
-          .then((body) => {
-            console.log(body);
-            setObject(body);
-        }).catch((error)=>{
-            console.log(error);
-        });
+                .then((res) => res.json())
+                .then((body) => {
+                    setVideoData(body)
+                    console.log(body.body.url);
+                    setlongURL(body.body.url);
+                    setIsLoading(true);
+                }).catch((error)=>{
+                console.log(error);
+            });
         }
         }, []);
 
@@ -72,50 +101,86 @@ const ImageDescription = () => {
         setExpanded(!expanded);
     };
 
+    if(!isLoading){
+        return(
+            <div>
+                Loading...
+            </div>
+        )
+    }
+
+
+
+    function createShortUrl() {
+        const requestOptions = {
+            method: 'POST',
+            headers:
+            {
+              "x-api-key": "TUIlOHUyE281a3xaws73i1flTFDVFnaBaMnAkWWb",
+              Accept: '*/*'
+            },
+            mode: 'cors',
+            body: JSON.stringify({long_url:longURL})
+          }
+
+      fetch("https://url.dronaje.com/create", requestOptions)
+        .then(response => { return response.json() }).then(data => {console.log(data.short_url);setShortURL(data.short_url) }).catch(error => console.log('error============:', error));
+          setSherButtonStyle({display:"inline"});
+          setSherMainButtonStyle({display:"none"});
+    };
+
+
 
 
 
     return (
         <div>
             <Header />
-            {type==='picture' && <Card className={classes.root}>
+            {type === 'picture' && isLoading && <Card className={classes.root}>
                 <CardHeader
-                    title={object.title}
+                    title={imageData.title}
                 />
                 <CardMedia
                     className={classes.media}
-                    image={object.url}
-                    title={object.title}
+                    image={imageData.url}
+                    title={imageData.title}
                 />
                 <CardContent>
                     <Typography variant="body2" color="textSecondary" component="p" style={{textAlign:"left"}}>
-                        <label style={{fontWeight:"bold", fontSize:"18px", marginRight:"4px"}}>Description:</label>{object.description}<br/>
-                        <label style={{fontWeight:"bold", fontSize:"18px", marginRight:"4px"}}>Tags:</label>{object.tags}<br/>
-                        <label style={{fontWeight:"bold", fontSize:"18px", marginRight:"4px"}}>Location:</label>{object.location}<br/>
+                        <label style={{fontWeight:"bold", fontSize:"18px", marginRight:"4px"}}>Description:</label>{imageData.description}<br/>
+                        <label style={{fontWeight:"bold", fontSize:"18px", marginRight:"4px"}}>Tags:</label>{imageData.tags}<br/>
+                        <label style={{fontWeight:"bold", fontSize:"18px", marginRight:"4px"}}>Location:</label>{imageData.location}<br/>
                     </Typography>
                 </CardContent>
                 <CardActions disableSpacing>
                 </CardActions>
             </Card>}
 
-                {type==='video' && <Card className={classes.root}>
-                <CardHeader
-                    title={object.title}
-                />
+            {type==='video' && isLoading && <Card className={classes.root}>
+                <CardHeader title={videoData?.title}/>
                 <CardMedia
                     autoPlay
-                    component="video" src={object.URL} allow="autoPlay"
+                    component="video" src={videoData?.URL} allow="autoPlay"
                 />
                 <CardContent>
                     <Typography variant="body2" color="textSecondary" component="p" style={{textAlign:"left"}}>
-                        <label style={{fontWeight:"bold", fontSize:"18px", marginRight:"4px"}}>Description:</label>{object.description}<br/>
-                        <label style={{fontWeight:"bold", fontSize:"18px", marginRight:"4px"}}>Tags:</label>{object.Tag}<br/>
-                        <label style={{fontWeight:"bold", fontSize:"18px", marginRight:"4px"}}>Location:</label>{object.location}<br/>
+                        <label style={{fontWeight:"bold", fontSize:"18px", marginRight:"4px"}}>Description:</label>{videoData.description}<br/>
+                        <label style={{fontWeight:"bold", fontSize:"18px", marginRight:"4px"}}>Tags:</label>{videoData.Tag}<br/>
+                        <label style={{fontWeight:"bold", fontSize:"18px", marginRight:"4px"}}>Location:</label>{videoData.location}<br/>
                     </Typography>
                 </CardContent>
                 <CardActions disableSpacing>
                 </CardActions>
             </Card>}
+
+            <button onClick={createShortUrl} style={sherMainButtonStyle}>
+            <h1>Share </h1>
+               </button>
+            <EmailShareButton className="shareButon" style={sherButtonStyle} subject = {emailSubject} body={emailBody}   url={shortURL} > <EmailIcon></EmailIcon></EmailShareButton>
+ 
+          
+            <WhatsappShareButton className="shareButon" style={sherButtonStyle}url={shortURL}><WhatsappIcon></WhatsappIcon> </WhatsappShareButton>
+        
              <button className="buy-button">
                 <img src={buy} className="buy" alt="img2"/>
             </button>

@@ -80,6 +80,7 @@ const VideoForm = () => {
             }
             e.preventDefault();
         }
+        window.location.replace('/homepage');
     }
 
     const handleLocation = (event) => {
@@ -113,7 +114,7 @@ const VideoForm = () => {
             <div className="formBody">
                 <div className="formsLogin">
                     <img src={dronaje} className="form-logo" alt="logo" />
-                    {massageFlag && (<h3 style={{ color: "red", textAlign: "center" }}>חסרים פרטים</h3>)}
+                    {massageFlag && (<h3 style={{ color: "red", textAlign: "center" }}>Details are missing</h3>)}
                     <form style={{
                         display: "flex",
                         flexDirection: "column",

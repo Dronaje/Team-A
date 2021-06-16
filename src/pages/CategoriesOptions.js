@@ -13,14 +13,14 @@ import InfoIcon from '@material-ui/icons/Info';
 const CategoriesOptions = () => {
     const [userData, setUserData] = useState([]);
     const [search, setSearch] = useState();
-    const [filterData, setFilterData] = useState(userData);
-	const [userId, setUserID] = useState(localStorage.getItem('user'));
-    const [pictures, setPictures] = useState([]);
+    const [filterImageData, setImageFilterData] = useState();
+    const [filterVideoData, setVideoFilterData] = useState();
+    const [userId, setUserID] = useState(localStorage.getItem('user'));
+    const [imageData, setImageData] = useState();
+    const [videoData, setVideoData] = useState();
 
     const classes = useStyles();
 
-    //TO DO - need to add here another fetch (guy\itamar)
-    //yanivs
     useEffect(() => {
         fetch(`https://a1v4ubfe9f.execute-api.eu-west-1.amazonaws.com/media/video/thumbnails?userID=${userId}`, {
             method: 'GET',
@@ -32,55 +32,43 @@ const CategoriesOptions = () => {
         })
             .then((res) => res.json())
             .then((body) => {
-                setUserData(body);
+                setVideoData(body);
             });
 
-
-            fetch(`https://rzlmwxfkse.execute-api.eu-west-1.amazonaws.com/media/image/thumbnails?userID=${userId}`,{  
-                     method: 'GET',
-                headers: {
+        fetch(`https://rzlmwxfkse.execute-api.eu-west-1.amazonaws.com/media/image/thumbnails?userID=${userId}`, {
+            method: 'GET',
+            headers: {
                 Accept: '*/*',
-                    "x-api-key" : "D88N0sZS9o7VDe3pHyibA24YSiaLxcpF9ZYBmj5H",
-                    "Content-Type" : 'application/json'
-            }, mode: 'cors'})
-        .then((res) => res.json())
-        .then((body) => {
-        console.log(body);
-        // const x = JSON.parse(body.body);
-        setPictures(body.body);
-        });
-
-
-
-
-
+                "x-api-key": "D88N0sZS9o7VDe3pHyibA24YSiaLxcpF9ZYBmj5H",
+                "Content-Type": 'application/json'
+            }, mode: 'cors'
+        })
+            .then((res) => res.json())
+            .then((body) => {
+                setImageData(body.body);
+            });
 
     }, []);
 
     console.log("Data", userData);
+    console.log("video data", videoData);
+    console.log("image data", imageData);
+
     console.log("search", search);
-    let searchDebounce = '';
 
-    // const onSearch = async (val) => {
-    //     clearTimeout(searchDebounce);
-    //     searchDebounce = setTimeout(async () => {
-    //         setSearch(val);
-    //         searchTags();
-    //     }, 1);
-    // }
-
-    const handelSearch = (event) =>{
+    const handelSearch = (event) => {
         setSearch(event);
         searchTags(event);
-        
     }
 
-    const searchTags = (text) => {
-        setFilterData(userData.filter(data => (data.Tag?.toLowerCase()).includes(text?.toLowerCase())));
-        console.log("filter function",userData.filter(data => (data.Tag?.toLowerCase()).includes(search?.toLowerCase())));
+    const searchTags = async (text) => {
+        setVideoFilterData(videoData.filter(data => (data.Tag?.toLowerCase()).includes(text?.toLowerCase())));
+        setImageFilterData(imageData.filter(data => (data.tags?.toLowerCase()).includes(text?.toLowerCase())));
+        console.log("filter function", videoData.filter(data => (data.Tag?.toLowerCase()).includes(search?.toLowerCase())));
     }
 
-    console.log("filter", filterData);
+    // console.log("filter", filterData);
+
 
     return (
         <div>
@@ -94,11 +82,11 @@ const CategoriesOptions = () => {
                 <GridList cellHeight={180} className={classes.gridList}>
                     <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
                     </GridListTile>
-                    {(search?.length === 0 || search?.length === undefined) &&  userData.map((video) => (
+                    {(search?.length === 0 || search?.length === undefined) && videoData?.map((video) => (
                         <GridListTile key={video.ID}>
                             <img src={video.URL} alt={video.id} style={{ cursor: "pointer" }} />
                             <GridListTileBar
-                                title={video.Title}
+                                title={video.Tag}
                                 actionIcon={
                                     <IconButton aria-label={`info about ${video.Title}`} className={classes.icon} >
                                         <InfoIcon />
@@ -107,21 +95,46 @@ const CategoriesOptions = () => {
                             />
                         </GridListTile>
                     ))}
-                    {search?.length > 0 && filterData.map((video) => (
-                        <GridListTile key={video.ID}>
-                            <img src={video.URL} alt={video.id} style={{ cursor: "pointer" }}/>
+                    {(search?.length === 0 || search?.length === undefined) && imageData?.map((image) => (
+                        <GridListTile key={image.ID}>
+                            <img src={image.url} alt={image.id} style={{ cursor: "pointer" }} />
                             <GridListTileBar
-                                title={video.Title}
+                                title={image.tags}
                                 actionIcon={
-                                    <IconButton aria-label={`info about ${video.Title}`} className={classes.icon} >
+                                    <IconButton aria-label={`info about ${image.tags}`} className={classes.icon} >
                                         <InfoIcon />
                                     </IconButton>
                                 }
                             />
                         </GridListTile>
                     ))}
-                    {(search?.length !== 0 && search?.length !== undefined) && filterData.length === 0 && <div>No results found</div>}
-
+                    {search?.length > 0 && filterVideoData.map((video) => (
+                        <GridListTile key={video.ID}>
+                            <img src={video.URL} alt={video.id} style={{ cursor: "pointer" }} />
+                            <GridListTileBar
+                                title={video.Tag}
+                                actionIcon={
+                                    <IconButton aria-label={`info about ${video.Tag}`} className={classes.icon} >
+                                        <InfoIcon />
+                                    </IconButton>
+                                }
+                            />
+                        </GridListTile>
+                    ))}
+                    {search?.length > 0 && filterImageData.map((image) => (
+                        <GridListTile key={image.ID}>
+                            <img src={image.url} alt={image.id} style={{ cursor: "pointer" }} />
+                            <GridListTileBar
+                                title={image.tags}
+                                actionIcon={
+                                    <IconButton aria-label={`info about ${image.tags}`} className={classes.icon} >
+                                        <InfoIcon />
+                                    </IconButton>
+                                }
+                            />
+                        </GridListTile>
+                    ))}
+                    {(search?.length !== 0 && search?.length !== undefined) && filterVideoData.length === 0 && filterImageData.length === 0 && <div>No results found</div>}
                 </GridList>
             </div>
         </div>

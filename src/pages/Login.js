@@ -48,7 +48,7 @@ const Login = () => {
   const validationSubmit = (e)=>{
       e.preventDefault();
     if(email==="none" || password==="none"){
-      setErrorMSG("חסרים פרטים");
+      setErrorMSG("Details are missing");
       setMassageFlag(true);
     }
     else{
@@ -79,7 +79,7 @@ const Login = () => {
       localStorage.setItem('getUser', user);
       history.push("/mfa");
     } catch (error) {
-      setErrorMSG("פרטים לא נכונים");
+      setErrorMSG("Invalid input");
       setMassageFlag(true)
     }
     setLoading(false);

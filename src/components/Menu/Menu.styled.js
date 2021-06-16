@@ -11,10 +11,11 @@ export const StyledMenu = styled.nav`
   top: 80px;
   left: 0;
   transition: transform 0.3s ease-in-out;
+  z-index:10;
 
   @media (max-width: ${({ theme }) => theme.mobile}) {
       width: 85%;
-      height: 93%;
+      z-index:10;
     }
 
   a {

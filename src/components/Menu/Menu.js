@@ -2,7 +2,6 @@ import React from 'react';
 import { bool } from 'prop-types';
 import { StyledMenu } from './Menu.styled';
 import AllPhotos from '../../static/AllPhotos.png';
-import Share from '../../static/share.png';
 import Search from '../../static/search.jpeg';
 import LogOut from '../../static/log-out.jpg';
 
@@ -22,10 +21,7 @@ const Menu = ({ open, ...props }) => {
         Search
         <span aria-hidden="true"><img src={Search} alt="img2"/></span>
         </a>
-      {/* <a href="/sharing" tabIndex={tabIndex}>
-        Send to a friend
-        <span aria-hidden="true"><img src={Share} alt="img3"/></span>
-        </a> */}
+
       <a href="/" tabIndex={tabIndex}>
         Log Out
         <span aria-hidden="true"><img src={LogOut} alt="img4"/></span>

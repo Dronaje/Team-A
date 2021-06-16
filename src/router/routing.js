@@ -6,8 +6,6 @@ import HomePage from '../pages/HomePage';
 import DescriptionPage from '../pages/ImageDescription';
 import MyCategorsPage from '../pages/UserCategories';
 import OptionsPage from '../pages/CategoriesOptions';
-import SharingConfirmPage from '../pages/SharingConfirm';
-import SharingPage from '../pages/Sharing';
 import ImageForm from '../pages/ImageForm';
 import LoginPage from '../pages/Login';
 import VideoForm from '../pages/VideoForm';
@@ -48,8 +46,6 @@ function Routing() {
             <Route path="/description" exact> <DescriptionPage /> </Route>
             <Route path="/categories" exact> <MyCategorsPage /> </Route>
             <Route path="/options" exact> <OptionsPage /> </Route>
-            <Route path="/confirm" exact> <SharingConfirmPage /> </Route>
-            <Route path="/sharing" exact> <SharingPage /> </Route>
             <Route path="/imageform" exact> <ImageForm /> </Route>
             <Route path="/login" exact> <LoginPage /> </Route>
             <Route path="/signin" exact> <SignInPage /> </Route>

@@ -84,7 +84,7 @@ const Signup= () => {
       setMassageFlag(true);
     }
     else if(phone[0] !== '+'){
-      setErrorMSG("Phone numbur format is +972533062400");
+      setErrorMSG("Phone number format is +972533062400");
       setMassageFlag(true);
     }
     else{

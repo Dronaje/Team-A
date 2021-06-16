@@ -61,8 +61,7 @@ const MFA = () => {
       console.log(user);
       // await Auth.confirmSignIn(
       //   user, // Return object from Auth.signIn()
-      //   code, // Confirmation code
-      //   'SOFTWARE_TOKEN_MFA' // MFA Type e.g. SMS_MFA, SOFTWARE_TOKEN_MFA
+      //   code // Confirmation code
       // );
       history.push("/homepage");
     } catch (error) {
